@@ -4,28 +4,30 @@ version '1.0-SNAPSHOT'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.1'
+        classpath 'com.android.tools.build:gradle:8.12.0'
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    namespace 'com.lykhonis.imagecrop'
+    compileSdkVersion 36
 
     defaultConfig {
         minSdkVersion 16
+        targetSdkVersion 36
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
@@ -34,5 +36,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.exifinterface:exifinterface:1.0.0'
+    implementation "androidx.exifinterface:exifinterface:1.4.1"
+//    implementation 'androidx.exifinterface:exifinterface:1.4.1'
 }
